@@ -1,6 +1,7 @@
 export interface inShoes {
+  id: string;
   name: string;
-  frete: string;
+  fare?: number;
   image_url: string;
   ranting: number;
   opened_at: string;

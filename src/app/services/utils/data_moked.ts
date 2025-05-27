@@ -1,0 +1,68 @@
+import { inShoes } from "../apiServices/Shoes/Models";
+
+const shoes: inShoes[] = [
+  {
+    name: "Matsuri Concept",
+    frete: "grátis",
+    image_url: "www.google.com",
+    ranting: 4.7,
+    opened_at: "08h00",
+    closed_at: "17h00",
+  },
+  {
+    name: "Matsuri Concept",
+    frete: "grátis",
+    image_url: "www.google.com",
+    ranting: 4.7,
+    opened_at: "08h00",
+    closed_at: "17h00",
+  },
+  {
+    name: "Matsuri Concept",
+    frete: "grátis",
+    image_url: "www.google.com",
+    ranting: 4.7,
+    opened_at: "08h00",
+    closed_at: "17h00",
+  },
+  {
+    name: "Matsuri Concept",
+    frete: "grátis",
+    image_url: "www.google.com",
+    ranting: 4.7,
+    opened_at: "08h00",
+    closed_at: "17h00",
+  },
+  {
+    name: "Matsuri Concept",
+    frete: "grátis",
+    image_url: "www.google.com",
+    ranting: 4.7,
+    opened_at: "08h00",
+    closed_at: "17h00",
+  },
+  {
+    name: "Matsuri Concept",
+    frete: "grátis",
+    image_url: "www.google.com",
+    ranting: 4.7,
+    opened_at: "08h00",
+    closed_at: "17h00",
+  },
+  {
+    name: "Matsuri Concept",
+    frete: "grátis",
+    image_url: "www.google.com",
+    ranting: 4.7,
+    opened_at: "08h00",
+    closed_at: "17h00",
+  },
+  {
+    name: "Matsuri Concept",
+    frete: "grátis",
+    image_url: "www.google.com",
+    ranting: 4.7,
+    opened_at: "08h00",
+    closed_at: "17h00",
+  },
+];

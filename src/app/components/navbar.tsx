@@ -5,7 +5,7 @@ import SearchBar from "./searchbar";
 const Navbar = () => {
   return (
     <header className="p-4 bg-[var(--primaryPurple)]">
-      <nav className="flex justify-between items-center">
+      <nav className="flex justify-between items-center lg:mx-auto lg:max-w-[1200px]">
       <Link href="/" prefetch>
         <Image
           src={"/assets/logo.svg"}

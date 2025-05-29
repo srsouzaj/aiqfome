@@ -1,26 +1,34 @@
 import Image from "next/image";
+import Link from "next/link";
+import FormatMoney from "../utils/Formatter/formatMoney";
 
-interface ICardShoes {
+interface ICardStores {
   img_src: string;
   name: string;
   fare?: number;
   rating: number;
+  isClosed?: boolean;
+  id: string;
 }
 
-const CardShoes = ({ img_src, name, rating, fare }: ICardShoes) => {
-  const fareIsFree = !fare;
-  const fareText = fareIsFree
-    ? "grátis"
-    : fare.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      });
-  const fareColorClass = fareIsFree
+const CardStores = ({
+  id,
+  img_src,
+  name,
+  rating,
+  isClosed = false,
+  fare,
+}: ICardStores) => {
+  const fareColorClass = !fare
     ? "text-[var(--primaryGreen)]"
-    : "text-[var(--primaryPurple)]";
+    : "text-[var(--secondaryPurple)]";
+  const shoesIsClosed = isClosed ? "opacity-50" : "opacity-100";
 
   return (
-    <article className="flex gap-3 rounded-[8px] bg-[var(--tertiaryWhite)]">
+    <Link
+      href={`store/${id}`}
+      className={`flex gap-3 rounded-[8px] bg-[var(--tertiaryWhite)] ${shoesIsClosed}`}
+    >
       <Image
         width={72}
         height={72}
@@ -38,12 +46,12 @@ const CardShoes = ({ img_src, name, rating, fare }: ICardShoes) => {
             <Image
               width={24}
               height={24}
-              src={fareIsFree ? "/assets/delivery.svg" : "/assets/fare.svg"}
+              src={!fare ? "/assets/delivery.svg" : "/assets/fare.svg"}
               alt=""
               className="w-[24px] h-[24px] block"
             />
             <p className={`${fareColorClass} text-sm font-bold`}>
-              {fareText}
+              {FormatMoney(fare)}
             </p>
           </span>
           <span className="flex gap-1 items-center">
@@ -60,8 +68,8 @@ const CardShoes = ({ img_src, name, rating, fare }: ICardShoes) => {
           </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 };
 
-export default CardShoes;
+export default CardStores;

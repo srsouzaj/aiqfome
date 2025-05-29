@@ -4,19 +4,19 @@ import SearchBar from "./searchbar";
 
 const Navbar = () => {
   return (
-    <header className="p-4 bg-[var(--primaryPurple)]">
+    <header className="p-4 bg-[var(--secondaryPurple)]">
       <nav className="flex justify-between items-center lg:mx-auto lg:max-w-[1200px]">
-      <Link href="/" prefetch>
-        <Image
-          src={"/assets/logo.svg"}
-          alt="logo"
-          width={32}
-          height={32}
-          priority
-        />
+        <Link href="/" prefetch>
+          <Image
+            src={"/assets/logo.svg"}
+            alt="logo"
+            width={32}
+            height={32}
+            priority
+          />
         </Link>
         <div className="flex flex-col">
-          <p className="text-[var(--secondaryWhite)] text-sm">entregando em</p>
+          <p className="text-[var(--tertiaryPurple)] text-sm">entregando em</p>
           <span className="flex gap-1 cursor-pointer">
             <p className="text-[var(--primaryWhite)] text-base">
               Rua Mandaguari, 198
@@ -38,7 +38,7 @@ const Navbar = () => {
           priority
         />
       </nav>
-      <SearchBar/>
+      <SearchBar />
     </header>
   );
 };

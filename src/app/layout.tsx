@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -21,9 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${nunito.className} vsc-initialized h-[100vh]`}>
+      <body
+        className={`${nunito.className} vsc-initialized flex flex-col justify-between h-[100vh]`}
+      >
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

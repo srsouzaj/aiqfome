@@ -2,39 +2,68 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --primary-purple: #7B1FA2;
+  --foreground: #202326;
+  --primary-purple: #580f78;
+  --secondary-purple: #7b1fa2;
+  --tertiary-purple: #eecffc;
   --primary-white: #ffffff;
-  --secondary-white: #EECFFC;
-  --tertiary-white: #F5F6F9;
+  --secondary-white: #f5f6f9;
+  --tertiary-white: #eef0f5;
   --primary-black: #000000;
-  --secondary-black: #393A3C;
-  --tertiary-black: #6D6F73;
-  --primary-green: #027A7A;
+  --secondary-black: #393a3c;
+  --tertiary-black: #6d6f73;
+  --quartiary-black: #202326;
+  --primary-green: #027a7a;
+  --secondary-green: #00a296;
 }
 
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --primaryGreen: var(--primary-green);
+  --secondaryGreen: var(--secondary-green);
   --primaryPurple: var(--primary-purple);
+  --secondaryPurple: var(--secondary-purple);
+  --tertiaryPurple: var(--tertiary-purple);
   --primaryWhite: var(--primary-white);
   --secondaryWhite: var(--secondary-white);
   --tertiaryWhite: var(--tertiary-white);
   --primaryBlack: var(--primary-black);
   --secondaryBlack: var(--secondary-black);
   --tertiaryBlack: var(--tertiary-black);
+  --quartiaryBlack: var(--quartiary-black);
 }
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family:'Nunito', Arial, Helvetica, sans-serif;
+  font-family: "Nunito", Arial, Helvetica, sans-serif;
+}
+
+.AccordionContent {
+  overflow: hidden;
+}
+.AccordionContent[data-state="open"] {
+  animation: slideDown 100ms ease;
+}
+.AccordionContent[data-state="closed"] {
+  animation: slideUp 100ms ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }

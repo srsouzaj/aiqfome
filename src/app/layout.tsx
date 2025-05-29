@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${nunito.className} vsc-initialized`}>
+      <body className={`${nunito.className} vsc-initialized h-[100vh]`}>
         <Navbar />
         {children}
       </body>

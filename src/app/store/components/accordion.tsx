@@ -10,12 +10,15 @@ import {
 } from "@radix-ui/react-accordion";
 import Image from "next/image";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
 interface IAccordion {
   store: InRestaurant;
 }
 
 const Accordion = ({ store }: IAccordion) => {
+  const { shoesId } = useParams();
+
   return (
     <RadixAccordion
       type="single"
@@ -31,12 +34,14 @@ const Accordion = ({ store }: IAccordion) => {
                   {category.name}
                 </h2>
 
-                <Image
-                  src={"/assets/discount.svg"}
-                  alt="discount logo"
-                  width={24}
-                  height={24}
-                />
+                {category.is_discounted && (
+                  <Image
+                    src={"/assets/discount.svg"}
+                    alt="discount logo"
+                    width={24}
+                    height={24}
+                  />
+                )}
               </span>
 
               {category.description && (
@@ -61,7 +66,7 @@ const Accordion = ({ store }: IAccordion) => {
               className="AccordionContent flex flex-col bg-white w-full"
             >
               <Link
-                href={`item/${content.id}`}
+                href={`${shoesId}/${content.id}`}
                 className="flex justify-between py-4 px-8 w-full"
               >
                 <div>

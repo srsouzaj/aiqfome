@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import FormatMoney from "../utils/Formatter/formatMoney";
 
 interface ICardStores {
   img_src: string;
@@ -18,14 +19,7 @@ const CardStores = ({
   isClosed = false,
   fare,
 }: ICardStores) => {
-  const fareIsFree = !fare;
-  const fareText = fareIsFree
-    ? "grátis"
-    : fare.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL",
-      });
-  const fareColorClass = fareIsFree
+  const fareColorClass = !fare
     ? "text-[var(--primaryGreen)]"
     : "text-[var(--secondaryPurple)]";
   const shoesIsClosed = isClosed ? "opacity-50" : "opacity-100";
@@ -52,11 +46,13 @@ const CardStores = ({
             <Image
               width={24}
               height={24}
-              src={fareIsFree ? "/assets/delivery.svg" : "/assets/fare.svg"}
+              src={!fare ? "/assets/delivery.svg" : "/assets/fare.svg"}
               alt=""
               className="w-[24px] h-[24px] block"
             />
-            <p className={`${fareColorClass} text-sm font-bold`}>{fareText}</p>
+            <p className={`${fareColorClass} text-sm font-bold`}>
+              {FormatMoney(fare)}
+            </p>
           </span>
           <span className="flex gap-1 items-center">
             <Image

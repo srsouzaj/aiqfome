@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import { storeMocked } from "../services/utils/data_moked";
+import { storesMocked } from "../services/utils/stores.mocked";
 import CardStores from "./card_stores";
 import { inStore } from "../services/apiServices/Store/Models";
 
@@ -13,7 +13,7 @@ const Cards = () => {
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
     setOpenedStores(
-      storeMocked.filter((store) => {
+      storesMocked.filter((store) => {
         const [openHour, openMinute] = store.opened_at.split(":").map(Number);
         const [closeHour, closeMinute] = store.closed_at.split(":").map(Number);
 
@@ -28,7 +28,7 @@ const Cards = () => {
     );
 
     setClosedStores(
-      storeMocked.filter((store) => {
+      storesMocked.filter((store) => {
         const [openHour, openMinute] = store.opened_at.split(":").map(Number);
         const [closeHour, closeMinute] = store.closed_at.split(":").map(Number);
 

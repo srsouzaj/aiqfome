@@ -1,20 +1,25 @@
 import WishList from "@/app/components/wishList";
+import { InRestaurant } from "@/app/services/apiServices/Restaurant/Models";
 import Image from "next/image";
 import Link from "next/link";
 
-const HeaderStore = () => {
+interface IHeaderStore {
+  store: InRestaurant;
+}
+
+const HeaderStore = ({ store }: IHeaderStore) => {
   return (
-    <section>
+    <section className="px-6">
       <article className="flex gap-2 items-center">
         <Image
-          src={"https://i.ibb.co/nMCwFmhN/matsuri.webp"}
+          src={store?.restaurant?.img_url}
           alt="logo"
           width={36}
           height={36}
           className="rounded"
         />
         <h1 className="text-[var(--quartiaryBlack)] text-[20px] font-extrabold">
-          Matsuri Concept
+          {store?.restaurant?.name}
         </h1>
       </article>
       <article className="flex justify-between">
@@ -23,7 +28,7 @@ const HeaderStore = () => {
           <WishList />
         </aside>
         <Link
-          href=""
+          href={`about/${store.id}`}
           className="text-[var(--secondaryGreen)] hover:font-medium flex items-center gap-1"
         >
           mais info

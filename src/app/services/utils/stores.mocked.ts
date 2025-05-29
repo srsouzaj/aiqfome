@@ -1,6 +1,6 @@
 import { inStore } from "../apiServices/Store/Models";
 
-export const storeMocked: inStore[] = [
+export const storesMocked: inStore[] = [
   {
     id: crypto.randomUUID(),
     name: "Matsuri Concept",

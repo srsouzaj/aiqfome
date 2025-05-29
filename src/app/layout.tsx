@@ -22,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${nunito.className} vsc-initialized`}>
+      <body
+        className={`${nunito.className} vsc-initialized flex flex-col justify-between h-[100vh]`}
+      >
         <Navbar />
         {children}
         <Footer />

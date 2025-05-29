@@ -2,13 +2,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #202326;
   --primary-purple: #580f78;
   --secondary-purple: #7b1fa2;
   --tertiary-purple: #eecffc;
   --primary-white: #ffffff;
   --secondary-white: #f5f6f9;
-  --tertiary-white: ##eef0f5;
+  --tertiary-white: #eef0f5;
   --primary-black: #000000;
   --secondary-black: #393a3c;
   --tertiary-black: #6d6f73;
@@ -33,16 +33,37 @@
   --tertiaryBlack: var(--tertiary-black);
   --quartiaryBlack: var(--quartiary-black);
 }
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Nunito", Arial, Helvetica, sans-serif;
+}
+
+.AccordionContent {
+  overflow: hidden;
+}
+.AccordionContent[data-state="open"] {
+  animation: slideDown 100ms ease;
+}
+.AccordionContent[data-state="closed"] {
+  animation: slideUp 100ms ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
 }

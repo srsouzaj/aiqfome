@@ -1,4 +1,4 @@
-export interface inShoes {
+export interface inStore {
   id: string;
   name: string;
   fare?: number;

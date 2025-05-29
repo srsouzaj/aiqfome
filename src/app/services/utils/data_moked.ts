@@ -1,6 +1,6 @@
-import { inShoes } from "../apiServices/Shoes/Models";
+import { inStore } from "../apiServices/Store/Models";
 
-export const shoesMocked: inShoes[] = [
+export const storeMocked: inStore[] = [
   {
     id: crypto.randomUUID(),
     name: "Matsuri Concept",

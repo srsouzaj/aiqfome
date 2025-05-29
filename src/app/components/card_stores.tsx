@@ -1,13 +1,23 @@
 import Image from "next/image";
+import Link from "next/link";
 
-interface ICardShoes {
+interface ICardStores {
   img_src: string;
   name: string;
   fare?: number;
   rating: number;
+  isClosed?: boolean;
+  id: string;
 }
 
-const CardShoes = ({ img_src, name, rating, fare }: ICardShoes) => {
+const CardStores = ({
+  id,
+  img_src,
+  name,
+  rating,
+  isClosed = false,
+  fare,
+}: ICardStores) => {
   const fareIsFree = !fare;
   const fareText = fareIsFree
     ? "grátis"
@@ -17,10 +27,14 @@ const CardShoes = ({ img_src, name, rating, fare }: ICardShoes) => {
       });
   const fareColorClass = fareIsFree
     ? "text-[var(--primaryGreen)]"
-    : "text-[var(--primaryPurple)]";
+    : "text-[var(--secondaryPurple)]";
+  const shoesIsClosed = isClosed ? "opacity-50" : "opacity-100";
 
   return (
-    <article className="flex gap-3 rounded-[8px] bg-[var(--tertiaryWhite)]">
+    <Link
+      href={`store/${id}`}
+      className={`flex gap-3 rounded-[8px] bg-[var(--tertiaryWhite)] ${shoesIsClosed}`}
+    >
       <Image
         width={72}
         height={72}
@@ -42,9 +56,7 @@ const CardShoes = ({ img_src, name, rating, fare }: ICardShoes) => {
               alt=""
               className="w-[24px] h-[24px] block"
             />
-            <p className={`${fareColorClass} text-sm font-bold`}>
-              {fareText}
-            </p>
+            <p className={`${fareColorClass} text-sm font-bold`}>{fareText}</p>
           </span>
           <span className="flex gap-1 items-center">
             <Image
@@ -60,8 +72,8 @@ const CardShoes = ({ img_src, name, rating, fare }: ICardShoes) => {
           </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 };
 
-export default CardShoes;
+export default CardStores;

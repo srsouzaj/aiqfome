@@ -6,7 +6,7 @@ import { storeUnitMocked } from "@/app/services/utils/storeUnit.mocked";
 export default function Store() {
   const store = storeUnitMocked;
   return (
-    <main className="flex flex-col gap-6 py-7 w-full h-full lg:mx-auto lg:max-w-[1200px]">
+    <main className="flex flex-col gap-6 py-7 w-full lg:mx-auto lg:max-w-[1200px]">
       <HeaderStore store={store} />
       <DeliveryDetail store={store} />
       <Accordion store={store} />

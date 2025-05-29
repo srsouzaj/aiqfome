@@ -18,11 +18,13 @@ export const storeUnitMocked: InRestaurant = {
     {
       id: crypto.randomUUID(),
       name: "Niguiris",
+      is_discounted: true,
       items: [],
     },
     {
       id: crypto.randomUUID(),
       name: "Ceviches",
+      is_discounted: true,
       description:
         "um prato super refrescante de peixe fatiado e marinado com limão",
       items: [],
@@ -39,13 +41,6 @@ export const storeUnitMocked: InRestaurant = {
           original_price: 17.0,
           price: 13.99,
           is_discounted: true,
-          tags: ["sales"],
-        },
-        {
-          id: crypto.randomUUID(),
-          name: "Califórnia",
-          ingredients: "Kani, pepino e maçã ou manga",
-          price: 13.99,
           tags: ["vegetarian"],
         },
         {
@@ -60,7 +55,7 @@ export const storeUnitMocked: InRestaurant = {
           ingredients:
             "Escolha 3 ingredientes: shimeji, alface americana, rúcula, pepino, tomate seco, cream cheese, maionese...",
           price_from: 13.99,
-          tags: ["vegetarian"],
+          tags: ["spicy"],
         },
         {
           id: crypto.randomUUID(),

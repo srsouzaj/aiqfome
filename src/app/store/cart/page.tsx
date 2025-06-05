@@ -4,6 +4,7 @@ import CartList from "./components/cartList";
 
 export default function Cart() {
   const store = storeUnitMocked;
+  //COMENT
   return (
     <main className="flex flex-col gap-6 py-7 px-6 h-full w-full lg:mx-auto lg:max-w-[1200px]">
       <HeaderCart store={store} />
